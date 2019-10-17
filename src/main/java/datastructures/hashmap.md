@@ -1,4 +1,4 @@
-##Hashmap/Hashtable
+## Hashmap/Hashtable
 
 ```java
 class HashMap {
@@ -18,7 +18,7 @@ class HashMap {
 * Implement simple hashtable
 * Practice questions
 
-####Overview
+#### Overview
 * Stores key/value pair mapping.
 * Key and value can be any object.
 * Hashcode is generated for key.
