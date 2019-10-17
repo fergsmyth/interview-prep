@@ -17,6 +17,7 @@ class HashMap {
 * Hashtable grow/shrinking
 * Implement simple hashtable
 * Practice questions
+* What makes a good hashcode
 
 #### Overview
 * Stores key/value pair mapping.
@@ -43,3 +44,6 @@ Then getting/setting is constant time : O(1)
 If lots of collisions
 Then getting/setting is linear time : O(n)
 
+#### Hashcode function :  hashcode()
+* Hashcode is used to group/distribute object across the hashmap space.
+* Integer that represents the object.
