@@ -21,6 +21,7 @@ public class Solution {
 
         for(int type : arr){
             counts[type]++;
+            // Small efficiency gain if we keep track of the max value encountered?
         }
 
         int firstMaxPos = 0, firstMaxVal = 0;
