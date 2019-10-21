@@ -17,7 +17,7 @@ public class Solution {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(isr);
         int noOfCommands = Integer.parseInt(bufferedReader.readLine());
-        Deque<String> previousStates = new LinkedList<>();
+        Deque<String> previousStates = new ArrayDeque<>();
         StringBuilder currentState = new StringBuilder();
         for(int i = 0; i < noOfCommands; i++){
             String line = bufferedReader.readLine();
