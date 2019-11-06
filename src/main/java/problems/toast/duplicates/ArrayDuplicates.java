@@ -1,4 +1,4 @@
-package problems.duplicates;
+package problems.toast.duplicates;
 
 import java.util.HashSet;
 

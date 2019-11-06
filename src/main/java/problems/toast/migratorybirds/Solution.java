@@ -1,4 +1,4 @@
-package problems.migratorybirds;
+package problems.toast.migratorybirds;
 
 import java.io.*;
 import java.math.*;
