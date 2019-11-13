@@ -7,7 +7,7 @@ public class MenuSolution {
     public static void main(String[] args) {
         Collection<Menu> menus = initialiseMenus();
         Deque<Double> priceStack = new ArrayDeque<>();
-        findPriceForItemInMenus("Sweet Potato Dish", menus, priceStack);
+        findPriceForItemInMenus("Eggs", menus, priceStack);
         System.out.println(priceStack);
     }
 
@@ -27,7 +27,7 @@ public class MenuSolution {
         }
     }
 
-    public static boolean findPriceForItemInItemGroups(String itemName, Collection<MenuGroup> groups, Deque<Double> priceStack){
+    private static boolean findPriceForItemInItemGroups(String itemName, Collection<MenuGroup> groups, Deque<Double> priceStack){
         for (MenuGroup group : groups) {
             boolean addedValue = false;
             if (group.getPrice() != null) {
@@ -49,10 +49,8 @@ public class MenuSolution {
         return false;
     }
 
-    public static boolean findPriceForItemInItems(String itemName, Collection<MenuItem> items, Deque<Double> priceStack){
+    private static boolean findPriceForItemInItems(String itemName, Collection<MenuItem> items, Deque<Double> priceStack){
             for (MenuItem item : items) {
-                System.out.println(itemName);
-                System.out.println(item.getItemName());
                 if (item.getItemName().equals(itemName)) {
                     if(item.getPrice() != null) {
                         priceStack.push(item.getPrice());
@@ -63,9 +61,8 @@ public class MenuSolution {
         return false;
     }
 
-    public static Collection<Menu> initialiseMenus(){
+    private static Collection<Menu> initialiseMenus(){
         // Starters
-
         // Soups
         MenuItem tomatoSoup = new MenuItem("Tomato Soup", null);
         MenuItem vegetableSoup = new MenuItem( "Vegetable Soup", null);
