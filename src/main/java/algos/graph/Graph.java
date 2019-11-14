@@ -1,8 +1,7 @@
-package algos;
+package algos.graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Graph {
@@ -10,6 +9,14 @@ public class Graph {
     List<Node> nodes;
 
     public Graph(List<Node> nodes) {
+        this.nodes = nodes;
+    }
+
+    public List<Node> getNodes() {
+        return nodes;
+    }
+
+    public void setNodes(List<Node> nodes) {
         this.nodes = nodes;
     }
 
@@ -23,7 +30,7 @@ public class Graph {
 
     }
 
-    private static Graph createDirectedGraph() {
+    public static Graph createDirectedGraph() {
         Node node5 = new Node("5");
         Node node4 = new Node("4");
         Node node3 = new Node("3");
