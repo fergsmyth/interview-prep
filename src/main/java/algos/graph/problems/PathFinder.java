@@ -12,23 +12,20 @@ public class PathFinder {
 
     public static void main(String[] args) {
         Graph alphaGraph = createDirectedGraph();
-        boolean isFound = new PathFinder().findNodeMatching("e", alphaGraph);
+        boolean isFound = new PathFinder().findNodeMatchingBFS(alphaGraph.getStart(), alphaGraph.getEnd());
         System.out.println(isFound);
     }
 
 
-    private boolean findNodeMatching(String nodeName, Graph graph){
+    // Find if end node can be reached from start node
+    private boolean findNodeMatchingBFS(Node start, Node end){
         Queue<Node> queue = new ArrayDeque<>();
-        Node root = graph.getNodes().get(0);
-        root.setVisited(true);
-        queue.add(root);
+        start.setVisited(true);
+        queue.add(start);
         while(!queue.isEmpty()){
-            queue.stream().forEach(node -> System.out.print(node.getName()));
-            System.out.println();
             Node r = queue.poll();
-            if(r.getName().equalsIgnoreCase(nodeName)) {
-                return true;
-            }
+            System.out.println(r.getName());
+            if(r.equals(end)) return true;
             for (Node child : r.getAdjacent()){
                 if (child.getVisited()) continue;
                 child.setVisited(true);
@@ -53,14 +50,17 @@ public class PathFinder {
 
         a.setAdjacent(new ArrayList<>(Arrays.asList(b, g)));
         b.setAdjacent(new ArrayList<>(Arrays.asList(c)));
-        c.setAdjacent(new ArrayList<>(Arrays.asList(d, e, f)));
-        d.setAdjacent(new ArrayList<>());
+        c.setAdjacent(new ArrayList<>(Arrays.asList(e, f)));
+        d.setAdjacent(new ArrayList<>(Arrays.asList(c)));
         e.setAdjacent(new ArrayList<>(Arrays.asList(d)));
-        f.setAdjacent(new ArrayList<>());
+        f.setAdjacent(new ArrayList<>(Arrays.asList(e)));
         g.setAdjacent(new ArrayList<>(Arrays.asList(i, h)));
         h.setAdjacent(new ArrayList<>(Arrays.asList(j)));
         i.setAdjacent(new ArrayList<>());
         j.setAdjacent(new ArrayList<>(Arrays.asList(g)));
-        return new Graph(Arrays.asList(a));
+        Graph graph = new Graph(Arrays.asList(a));
+        graph.setStart(e);
+        graph.setEnd(f);
+        return graph;
     }
 }

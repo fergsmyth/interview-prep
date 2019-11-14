@@ -7,6 +7,8 @@ import java.util.List;
 public class Graph {
 
     List<Node> nodes;
+    private Node start;
+    private Node end;
 
     public Graph(List<Node> nodes) {
         this.nodes = nodes;
@@ -28,6 +30,22 @@ public class Graph {
         Graph directedGraphForBFS = createDirectedGraph();
         new BFS().searchGraph(directedGraphForBFS);
 
+    }
+
+    public Node getStart() {
+        return start;
+    }
+
+    public void setStart(Node start) {
+        this.start = start;
+    }
+
+    public Node getEnd() {
+        return end;
+    }
+
+    public void setEnd(Node end) {
+        this.end = end;
     }
 
     public static Graph createDirectedGraph() {
