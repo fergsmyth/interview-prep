@@ -14,10 +14,13 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph directedGraph = createDirectedGraph();
 
-        new DFS().searchGraph(directedGraph);
-//        new BFS().searchGraph(graph);
+        Graph directedGraphForDFS = createDirectedGraph();
+        new DFS().searchGraph(directedGraphForDFS);
+
+        Graph directedGraphForBFS = createDirectedGraph();
+        new BFS().searchGraph(directedGraphForBFS);
+
     }
 
     private static Graph createDirectedGraph() {

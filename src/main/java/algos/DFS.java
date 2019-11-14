@@ -3,6 +3,7 @@ package algos;
 public class DFS {
 
     public void searchGraph(Graph graph){
+        System.out.println("Depth First Search");
         graph.nodes.stream().forEach(this::search);
     }
 
