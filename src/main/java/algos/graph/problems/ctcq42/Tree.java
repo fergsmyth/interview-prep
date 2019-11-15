@@ -19,7 +19,7 @@ public class Tree {
         return node;
     }
 
-    public static Tree createMininalTree(int[] values){
+    public static Tree createMinimalTree(int[] values){
         Tree tree = new Tree();
         tree.insertMidpoint(values,0, values.length - 1, tree);
         return tree;
