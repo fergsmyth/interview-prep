@@ -1,5 +1,7 @@
 package algos.graph.problems.ctcq42;
 
+import algos.graph.problems.Tree;
+
 public class CTCQ42 {
 
     public static void main(String[] args) {

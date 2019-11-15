@@ -1,4 +1,4 @@
-package algos.graph.problems.ctcq42;
+package algos.graph.problems;
 
 
 public class Node {

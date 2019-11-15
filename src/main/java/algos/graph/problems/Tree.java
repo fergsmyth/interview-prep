@@ -1,4 +1,9 @@
-package algos.graph.problems.ctcq42;
+package algos.graph.problems;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class Tree {
 
@@ -47,5 +52,25 @@ public class Tree {
         }
     }
 
+    public Map<Integer, LinkedList<Node>> getDepthLists(){
+        Map<Integer, LinkedList<Node>> depthMapList = new HashMap<>();
+        listDepth(1, root, depthMapList);
+        return depthMapList;
+    }
+
+    private void listDepth(int counter, Node node, Map<Integer, LinkedList<Node>> map){
+        if(node == null) return;
+        LinkedList<Node> nodes = map.get(counter);
+        if(nodes != null){
+            nodes.add(node);
+        } else {
+            LinkedList depthList = new LinkedList();
+            depthList.add(node);
+            map.put(counter, depthList);
+        }
+        counter++;
+        listDepth(counter, node.left, map);
+        listDepth(counter, node.right, map);
+    }
 
 }

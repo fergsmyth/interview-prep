@@ -1,7 +1,5 @@
 package algos.graph.problems;
 
-import algos.graph.problems.ctcq42.Node;
-
 import java.util.ArrayDeque;
 import java.util.Queue;
 
