@@ -72,4 +72,18 @@ public class Tree {
         listDepthDFS(counter, node.right, map);
     }
 
+    public void checkBalance(){
+        System.out.println(checkBalance(root, 0));
+    }
+
+    private int checkBalance(Node node, int curDepth){
+        if (node == null) return curDepth;
+        int depth = curDepth + 1;
+        int leftDepth = checkBalance(node.left, depth);
+        int rightDepth = checkBalance(node.right, depth);
+        int diff = Math.abs(leftDepth - rightDepth);
+        if (leftDepth == -1|| rightDepth == -1 || diff > 1) return -1;
+        return Math.max(leftDepth, rightDepth);
+    }
+
 }

@@ -19,13 +19,14 @@ public class Solution {
     public static int countPairs(int[] indicies){
         Map<Integer, HashSet<Integer>> mappings = new HashMap<>();
         for(int i = 0; i < indicies.length; i++){
-            if(mappings.containsKey(indicies[i])){
-                HashSet<Integer> integers = mappings.get(indicies[i]);
+            int key = indicies[i];
+            if(mappings.containsKey(key)){
+                HashSet<Integer> integers = mappings.get(key);
                 integers.add(i);
             } else {
                 HashSet<Integer> integers = new HashSet<>();
                 integers.add(i);
-                mappings.put(indicies[i], integers);
+                mappings.put(key, integers);
             }
         }
 
@@ -44,7 +45,7 @@ public class Solution {
 
     public static BigInteger factorial(int n){
         BigInteger combos = BigInteger.ONE;
-        for (int i = 1;  i <= n; i++){
+        for (int i = 2;  i <= n; i++){
             combos = combos.multiply(BigInteger.valueOf(i));
         }
         return combos;
