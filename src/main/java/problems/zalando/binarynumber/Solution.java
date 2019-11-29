@@ -1,7 +1,8 @@
 package problems.zalando.binarynumber;
 
 /**
- * Given a binary number as a string, count the number of steps to zero. Only operations allowed divded by 2 or minus 1.
+ * Given a number as a binary string, count the number of steps to zero.
+ * Only operations allowed are divided by 2 for even numbers and subtract 1 for odd numbers.
  */
 public class Solution {
 
