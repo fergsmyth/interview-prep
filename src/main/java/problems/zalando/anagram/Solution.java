@@ -1,10 +1,7 @@
 package problems.zalando.anagram;
-package com.codility;
 
-// you can also use imports, for example:
-// import java.util.*;
-import org.junit.Test;
-import org.junit.Assert;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
 
@@ -49,9 +46,9 @@ public class Solution {
         for(char character : firstString.toCharArray()){
             Integer characterCount = characterToCount.get(character);
             if(characterCount == null){
-                characterCount = new Integer(1);
+                characterCount = Integer.valueOf(1);
             } else {
-                characterCount = characterToCount.add(1);
+                characterCount = characterCount + 1;
             }
             characterToCount.put(character, characterCount);
         }
@@ -61,7 +58,7 @@ public class Solution {
             if(characterCount == null){
                 return false;
             } else {
-                characterCount = characterCount.subtract(1);
+                characterCount = characterCount - 1;
                 if(characterCount.equals(0)){
                     characterToCount.remove(character);
                 } else {
@@ -72,11 +69,4 @@ public class Solution {
         return !characterToCount.isEmpty();
     }
 
-
-    @Test
-    public void testSquareRoot(){
-        Solution solution = new Solution();
-        Integer squareRoot = solution.sqrtBinary(4);
-        Assert.assertEquals(squareRoot, new Integer(2));
-    }
 }
