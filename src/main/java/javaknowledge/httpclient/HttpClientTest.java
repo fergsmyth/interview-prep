@@ -9,7 +9,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Taken from https://winterbe.com/posts/2018/09/24/java-11-tutorial/
+ * */
 public class HttpClientTest {
+
     public static void main(String[] args) throws IOException, InterruptedException {
         HttpClientTest client = new HttpClientTest();
         client.sendHttpGETRequest();

@@ -7,9 +7,6 @@ import java.util.function.Predicate;
 
 public class LocalVariableTypes {
 
-    public static void main(String[] args) {
-
-    }
     /**
      * Taken from https://winterbe.com/posts/2018/09/24/java-11-tutorial/
      * */
